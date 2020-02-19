@@ -11,13 +11,6 @@ do
    fi
 done
 
-# install git
-if git --version 2>&1 >/dev/null ; then 
-    echo >&2 "git installed"
-else
-    sudo apt install git -y
-fi
-
 # install docker
 if docker --version 2>&1 >/dev/null ; then 
     echo >&2 "docker installed"
@@ -41,4 +34,4 @@ if [ $count -gt 2 ]; then
 else 
     echo "Starting all services:....."
     docker-compose up --build
-fi 
+fi
