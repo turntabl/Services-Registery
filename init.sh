@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #create init env files: list all services in the array, separeted by space
-declare -a arr=("hello" "gis" ) 
+declare -a arr=("apigateway" "gis" "permission") 
 for i in "${arr[@]}"
 do
    filename="./.envs/.$i" 

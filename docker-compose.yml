@@ -1,15 +1,19 @@
 version: '3'
 services:
-  hello:
-    image: "idawud/hello:v1"
+  apigateway:
+    image: "idawud/turntablapigateway:latest"
+      env_file:
+      - .envs/.apigateway
+      ports:
+        - "80:8081"
+      expose:
+        - 80
+  permission:
+    image: "idawud/accperm:v3"
     env_file:
-      - .envs/.hello
+      - .envs/.permission
     ports:
-      - 5000
-  todo:
-    image: "jpgough/api-workshop-solution"
-    ports:
-      - "8000:8000"
+      - "5000:5000"
   gis:
     image: "isammyk/gis-docker:latest"
     env_file:
