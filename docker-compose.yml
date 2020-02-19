@@ -1,18 +1,18 @@
 version: '3'
 services:
-  hello-service:
+  hello:
     image: "idawud/hello:v1"
     env_file:
-      - .envs/.hello-env
+      - .envs/.hello
     ports:
       - 5000
-  todo-service:
+  todo:
     image: "jpgough/api-workshop-solution"
     ports:
       - "8000:8000"
-  gis-service:
+  gis:
     image: "isammyk/gis-docker:latest"
     env_file:
-      - .envs/.gis-env
+      - .envs/.gis
     ports:
       - "5004:5004"

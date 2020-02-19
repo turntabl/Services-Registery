@@ -1,4 +1,15 @@
 #!/bin/bash
+ 
+#create init env files: list all services in the array, separeted by space
+declare -a arr=("hello" "gis" ) 
+for i in "${arr[@]}"
+do
+   filename="./.envs/.$i" 
+   if [[ ! -e "$filename" ]]; then
+    mkdir -p ./.envs
+    touch $filename
+   fi
+done
 
 # install git
 if git --version 2>&1 >/dev/null ; then 
@@ -22,14 +33,12 @@ else
 fi
 
 # run docker-compose
-
-IS_RUNNING=`docker-compose ps -q hello-service`
-if [[ "$IS_RUNNING" != "" ]]; then
-    echo "The service is running!!!"
+declare -i count=$(docker-compose ps | wc -l) 
+if [ $count -gt 2 ]; then
+    echo "Restarting services:....."
     docker-compose down
     docker-compose up --build
 else 
+    echo "Starting all services:....."
     docker-compose up --build
-fi
-#docker-compose down
-#docker-compose up --build
+fi 
