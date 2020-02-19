@@ -29,9 +29,9 @@ fi
 declare -i count=$(docker-compose ps | wc -l) 
 if [ $count -gt 2 ]; then
     echo "Restarting services:....."
-    docker-compose down
-    docker-compose up --build
+    sudo docker-compose down
+    sudo docker-compose up --build
 else 
     echo "Starting all services:....."
-    docker-compose up --build
+    sudo docker-compose up --build
 fi
