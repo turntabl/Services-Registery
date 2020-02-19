@@ -30,8 +30,10 @@ declare -i count=$(docker-compose ps | wc -l)
 if [ $count -gt 2 ]; then
     echo "Restarting services:...."
     sudo docker-compose down
-    sudo docker-compose up -d --build --no-recreate
+    sudo docker-compose build
+    sudo docker-compose up -d --no-recreate
 else 
     echo "Starting all services:....."
-    sudo docker-compose up --build
+    sudo docker-compose build
+    sudo docker-compose up -d --no-recreate
 fi
