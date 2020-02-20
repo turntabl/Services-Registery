@@ -31,12 +31,14 @@ if [ $count -gt 2 ]; then
     echo "Restarting services:...."
     sudo docker-compose down 
     sudo docker-compose pull 
+    sudo docker rmi $(docker images -a | grep '<none>' | awk '{print $3}')
     sudo docker-compose build --no-cache
     sudo docker-compose up -d
 else 
     echo "Starting all services:....."
     sudo docker-compose down 
     sudo docker-compose pull 
+    sudo docker rmi $(docker images -a | grep '<none>' | awk '{print $3}')
     sudo docker-compose build --no-cache
     sudo docker-compose up -d
 fi
