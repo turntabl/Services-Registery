@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-  pull_request:
+  pull_request_review:
     branches:
-      - master
+      types: [edited]
 jobs:
   build:
 
