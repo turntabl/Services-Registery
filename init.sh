@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #create init env files: list all services in the array, separeted by space
-declare -a arr=("apigateway" "gis" "permission") 
+declare -a arr=("apigateway" "gis" "permission" "node-redirect-service") 
 for i in "${arr[@]}"
 do
    filename="./.envs/.$i" 
@@ -40,3 +40,6 @@ else
     sudo docker-compose build --no-cache
     sudo docker-compose up -d
 fi
+
+#INTEGROMAT URL FOR CHESS PROJECT
+export URLintegromat="https://hook.integromat.com/jjat9jry4atuu9y8xswevgilkvtk4pen"
