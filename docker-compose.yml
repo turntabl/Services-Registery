@@ -2,21 +2,18 @@ version: '3'
 services:
   apigateway:
     image: "idawud/turntablapigateway:latest"
-    pull: true
     env_file:
     - .envs/.apigateway
     ports:
       - "80:8081"
   permission:
     image: "idawud/accperm:v3"
-    pull: true
     env_file:
       - .envs/.permission
     ports:
       - "5000:5000"
   gis:
     image: "isammyk/gis-docker:latest"
-    pull: true
     env_file:
       - .envs/.gis
     ports:
