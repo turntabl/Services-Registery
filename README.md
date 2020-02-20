@@ -11,7 +11,7 @@
       - "<port>:<port>"
    ``` 
    *NB: Ensure the port your  using isn't alreday in use* <br>
-   You can omit the env_file if your application is not using any environment variables, as simpe as
+   You can omit the env_file if your application is not using any environment variables, as simple as
    ```
     <service-name>:
     image: "<docker-image-url>" 
@@ -20,7 +20,7 @@
    ``` 
 2. If your application made use of an env_file then open the *_init.sh_* file and add your <service-name> above to the array on line 4
 
-3. You can now create a PR for and for your services to spin up
+3. You can now create a Pull Request for and for your services to spin up
 
 4. Now the service spins up but you would not be able to view anything because app running on any port apart from the default isn't visibe outside the box. So you'll have to add this service to the [turntabl API Gateway](https://github.com/turntabl/TurntablAPIGateway.git). You can clone this repo and create a PR after making these additions
     1. Open the src/main/java/io/tuntabl/TurntablApiGatewayApplication.java
