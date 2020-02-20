@@ -21,6 +21,7 @@ services:
 
   chess:
     image: "francisbilla/node-redirect-service"
-    - .envs/.node-redirect-service
+     env_file:
+      - .envs/.node-redirect-service
     ports: 
       -"8080:8080"    
