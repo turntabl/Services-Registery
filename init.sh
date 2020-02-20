@@ -40,6 +40,3 @@ else
     sudo docker-compose build --no-cache
     sudo docker-compose up -d
 fi
-
-#INTEGROMAT URL FOR CHESS PROJECT
-export URLintegromat="https://hook.integromat.com/jjat9jry4atuu9y8xswevgilkvtk4pen"
