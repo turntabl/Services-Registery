@@ -25,7 +25,7 @@
 4. Now the service spins up but you would not be able to view anything because app running on any port apart from the default isn't visibe outside the box. So you'll have to add this service to the [turntabl API Gateway](https://github.com/turntabl/TurntablAPIGateway.git). You can clone this repo and create a PR after making these additions
     1. Open the src/main/java/io/tuntabl/TurntablApiGatewayApplication.java
     2. If your service is an API or only Endpoint, then you should add security layer for access using OPEN ID Connect by modifying this file to add route
-    *NB: use <service-name> above* 
+    *NB: use the service-name above* 
      ```
      .route("<service-name> ",
             r -> r.path("/<service-name> /**")
@@ -40,7 +40,7 @@
                 .filters(f -> f.rewritePath("/<service-name> /(?<segment>.*)", "/${segment}"))
                 .uri("http://<service-name>:<service-port>"))
     ```
-5. If your PR is merged you can now access the service at http://api.services.turntabl.io/<service-name>/[all the routes in this service]
+5. If your PR is merged you can now access the service at http://api.services.turntabl.io/service-name/[all the routes in this service]
 
 ### Setting the Environment Variables and running CI/CD
 The primary method we use is the GitHub Action
