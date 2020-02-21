@@ -19,7 +19,7 @@ services:
     ports:
       - "5004:5004"
   chess:
-    image: "926377470665.dkr.ecr.us-east-2.amazonaws.com/chess:latest"
+    image: "francisbilla/chess"
     env_file:
       - .envs/.chess
     ports: 
