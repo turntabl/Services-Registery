@@ -1,6 +1,6 @@
 # Services-Registery
 
-### Register a new service
+## Register a new service
 1. In the *_docker-compose.yml_* file add new service by appending the service spec to the end <br>
    ```
     <service-name>:
