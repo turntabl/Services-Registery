@@ -19,8 +19,8 @@ services:
     ports:
       - "5004:5004"
   chess:
-    image: "francisbilla/chess"
+    image: "francisbilla/chess:latest"
     env_file:
       - .envs/.chess
     ports: 
-      -"8080:8080"    
+      - "8080:8080"    
