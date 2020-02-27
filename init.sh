@@ -16,7 +16,8 @@ done
 if docker --version 2>&1 >/dev/null ; then 
     echo >&2 "docker installed"
 else
-    sudo apt install docker -y
+    sudo apt update
+    sudo apt install docker.io -y
 fi
 
 #install docker-compose
