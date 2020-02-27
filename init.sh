@@ -1,7 +1,7 @@
 #!/bin/bash
  
-#create init env files: list all services in the array, separeted by space
-declare -a arr=("apigateway" "gis" "permission" "chess") 
+#create init env files: list all services in the array, separeted by space 
+declare -a arr=("apigateway" "gis" "permission"  "chess" "holiday")  
 
 for i in "${arr[@]}"
 do

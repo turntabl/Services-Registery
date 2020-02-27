@@ -23,4 +23,10 @@ services:
     env_file:
       - .envs/.chess
     ports: 
-      - "8080:8080"    
+      - "8080:8080" 
+  holiday:
+    image: "billalidocker/holiday:latest"
+    env_file:
+      - .envs/.holiday
+    ports: 
+      - "7070:7070"  
