@@ -15,7 +15,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          IMAGE_URI: "xxxx.dkr.ecr.us-east-2.amazonaws.com/IMAGE_NAME"
+          IMAGE_URI: "<accoutnt-id>.dkr.ecr.us-east-2.amazonaws.com/IMAGE_NAME"
           TAG_NAME: "latest"
           LATEST: "true"
           
@@ -24,7 +24,7 @@ jobs:
         with:
           command: | 
             cd Services-Registery
-            echo -e ${{ secrets.ENV }} > ./.envs/.${{ secrets.SERVICE }}
+            echo -e ${{ secrets.ENV }}  > ./.envs/.${{ secrets.SERVICE }}
             sudo docker-compose stop ${{ secrets.SERVICE }}
             sudo docker-compose rm -f -v ${{ secrets.SERVICE }}
             sudo docker-compose pull ${{ secrets.SERVICE }}
