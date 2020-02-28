@@ -6,6 +6,7 @@ services:
     - .envs/.apigateway
     ports:
       - "80:8081"
+      - "443:8081"
   permission:
     image: "idawud/accperm:v3"
     env_file:
@@ -28,5 +29,9 @@ services:
     image: "billalidocker/holiday:latest"
     env_file:
       - .envs/.holiday
+    ports:  
+      - "7070:7070" 
+  empire:
+    image: "0275309199/empire:latest" 
     ports: 
-      - "7070:7070"  
+      - "8050:8080"
