@@ -33,5 +33,7 @@ services:
       - "7070:7070" 
   empire:
     image: "0275309199/empire:latest" 
+    env_file:
+      - .envs/.empire
     ports: 
-      - "8050:8080"
+      - "8050:8050"
