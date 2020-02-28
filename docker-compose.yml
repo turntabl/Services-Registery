@@ -29,7 +29,7 @@ services:
     image: "billalidocker/holiday:latest"
     env_file:
       - .envs/.holiday
-    ports: 
+    ports:  
       - "7070:7070" 
   empire:
     image: "0275309199/empire:latest" 

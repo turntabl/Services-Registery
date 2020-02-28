@@ -14,7 +14,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-            echo -e "if git --version 2>&1 >/dev/null ; then echo >&2 "git installed"; else sudo apt install git -y; fi\nif [ ! -d Services-Registery ]; then git clone https://github.com/idawud/Services-Registery.git && cd Services-Registery; else cd Services-Registery && git pull; fi" > run.sh 
+            echo -e "if git --version 2>&1 >/dev/null ; then echo >&2 "git installed"; else sudo apt install git -y; fi\nif [ ! -d Services-Registery ]; then git clone https://github.com/turntabl/Services-Registery.git && cd Services-Registery; else cd Services-Registery && git pull; fi" > run.sh 
             chmod +x run.sh && ./run.sh
             cd Services-Registery 
             chmod +x init.sh && ./init.sh
