@@ -13,18 +13,18 @@ services:
       - .envs/.permission
     ports:
       - "5000:5000"
-  gis:
-    image: "isammyk/gis-docker:latest"
-    env_file:
-      - .envs/.gis
-    ports:
-      - "5004:5004"
-  chess:
-    image: "francisbilla/chess:latest"
-    env_file:
-      - .envs/.chess
-    ports: 
-      - "8080:8080" 
+#  gis:
+#    image: "isammyk/gis-docker:latest"
+#    env_file:
+#     - .envs/.gis
+#    ports:
+#      - "5004:5004"
+#  chess:
+#    image: "francisbilla/chess:latest"
+#    env_file:
+#      - .envs/.chess
+#    ports: 
+#      - "8080:8080" 
   holiday:
     image: "billalidocker/holiday:latest"
     env_file:
